@@ -1,0 +1,11 @@
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/bin/Debug/netcoreapp2.0/NetworkingApp.deps.json
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/bin/Debug/netcoreapp2.0/NetworkingApp.runtimeconfig.json
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/bin/Debug/netcoreapp2.0/NetworkingApp.runtimeconfig.dev.json
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/bin/Debug/netcoreapp2.0/NetworkingApp.dll
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/bin/Debug/netcoreapp2.0/NetworkingApp.pdb
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/obj/Debug/netcoreapp2.0/NetworkingApp.csprojResolveAssemblyReference.cache
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/obj/Debug/netcoreapp2.0/NetworkingApp.csproj.CoreCompileInputs.cache
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/obj/Debug/netcoreapp2.0/NetworkingApp.AssemblyInfoInputs.cache
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/obj/Debug/netcoreapp2.0/NetworkingApp.AssemblyInfo.cs
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/obj/Debug/netcoreapp2.0/NetworkingApp.dll
+/Users/benjaminsalasek/Documents/GitHub/NetworkingApp/NetworkingApp/obj/Debug/netcoreapp2.0/NetworkingApp.pdb
