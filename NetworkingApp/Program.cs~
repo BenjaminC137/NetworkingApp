@@ -6,36 +6,38 @@ namespace NetworkingApp
 {
     class Program
     {
-        private static System.Net.Sockets.UdpClient udp = new System.Net.Sockets.UdpClient(15000);
-        private static System.Net.IPEndPoint ip = new System.Net.IPEndPoint(System.Net.IPAddress.Broadcast, 15000);
-
+        private static System.Net.HttpListener http = new System.Net.HttpListener();
         private static void Listen()
         {
-            udp.BeginReceive((iar) =>
+
+            http.BeginGetContext((iar) =>
             {
-                byte[] bytes = udp.EndReceive(iar, ref ip);
-                string message = System.Text.Encoding.ASCII.GetString(bytes);
-                Console.WriteLine(message);
+                System.Net.HttpListenerContext context = http.EndGetContext(iar);
+                string name = "World";
+                if (context.Request.QueryString.AllKeys.Contains("name"))
+                {
+                    name = context.Request.QueryString["name"];
+                }
+                System.IO.Stream stream = context.Response.OutputStream;
+                byte[] encodedMessage = System.Text.Encoding.ASCII.GetBytes("Hello " + name);
+                stream.Write(encodedMessage, 0, encodedMessage.Length);
+                Console.WriteLine("Request from " + name);
+                context.Response.Close();
                 Listen();
             }, new object());
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your name");
-            string yourName = Console.ReadLine();
-            string typedMessage = "";
-
+            http.Prefixes.Add("http://*:80/");
+            http.Start();
             Listen();
+            string typedMessage;
             do
             {
                 typedMessage = Console.ReadLine();
-                byte[] encodedMessage = System.Text.Encoding.ASCII.GetBytes(yourName + ": " + typedMessage);
-                string ipAddress = "192.168.1.40";
-                var recipient = new System.Net.IPEndPoint(System.Net.IPAddress.Parse(ipAddress), 15000);
-                udp.Send(encodedMessage, encodedMessage.Length, recipient);
-            }
-                while (typedMessage != "exit");
 
+            } while (typedMessage != "EXIT");
+            http.Stop();
         }
     }
 }
